@@ -7,17 +7,22 @@
 
 <body>
   <h1 class='jumbotron'>Look for a Doctor</h1>
-  <form id='symptomForm'>
+  <form id='queryForm'>
     <div class="form-group">
-      <label for="symptom">Search by Symptom</label>
-      <input class="form-control" name="symptom" id="symptom" type="text" required>
+      <label for="query">Search by Doctor</label>
+      <input class="form-control" name="query" id="query" type="text">
     </div>
-    <button class="btn btn-primary" type='submit'>Search For Doctors</button>
+    <label for="radio">Run Query By:</label>
+    <div class="radio">
+      <label><input type="radio" value='Symptom' name="queryType">Symptom</label>
+      <label><input type="radio" value='Name' name="queryType">Name</label>
+      <label><input type="radio" value='All' name="queryType" checked>All</label>
+    <button class="btn btn-primary" type='submit'>Search For Doctors</button><br>
   </form>
-  <button id='getAll' class='btn btn-info'>All Doctors in Seattle</button>
+
 
   <h1>Doctors:<br></h1>
-  <div class='doctorList'>
+  <div class='doctors'>
     <h2 id="doctorTitle"></h2>
     <p id="doctorList"></p>
   </div>
