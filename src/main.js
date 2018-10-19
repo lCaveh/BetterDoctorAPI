@@ -30,10 +30,11 @@ $(document).ready(function () {
         promise.then(function (response) {
             let body = JSON.parse(response);
             let data = body.data;
-
+            $('#doctorTitleResults').empty();
             if (data.length === 0) {
-                $('#doctorList').text(`No doctors matching the symptom ${queryType} were found.`);
+                $('#doctorTitleResults').text(`No doctors listed matching the ${queryType}: '${inputQuery}' were found.`);
             } else {
+                // $('#doctorList').empty();
                 $('#doctorInfo').empty();
                 for (let i = 0; i < data.length; i++) {
                     let fn = data[i].profile.first_name;

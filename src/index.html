@@ -7,17 +7,17 @@
 
 <body>
   <div class='container'>
-    <h1 class='jumbotron'>Look for a Doctor</h1>
+    <h1 class='jumbotron'>Look for a Seattle Doctor</h1>
     <form id='queryForm'>
       <div class="form-group">
-        <label for="query">Search by Doctor</label>
+        <label for="query">Search for a Doctor</label>
         <input class="form-control" name="query" id="query" type="text">
       </div>
       <label for="radio">Search By:</label>
       <div class="radio">
         <label class='mr-2'><input class='mr-2' type="radio" value='Symptom' name="queryType">Symptom</label>
-        <label class='mr-2'><input class='mr-2' type="radio" value='Name' name="queryType">Name</label>
-        <label class='mr-2'><input class='mr-2' type="radio" value='All' name="queryType" checked>All in Seattle</label><br>
+        <label class='mr-2'><input class='mr-2' type="radio" value='Name' name="queryType" checked>Name</label>
+        <label class='mr-2'><input class='mr-2' type="radio" value='All' name="queryType">All in Seattle</label><br>
         <button class="btn btn-primary" type='submit'>Search For Doctors</button><br>
     </form>
 
@@ -25,6 +25,7 @@
       <div class='row'>
         <div class='col'>
           <h2 id="doctorTitle"></h2>
+          <h5 id="doctorTitleResults"></h5>
           <table class="table table-striped" id="doctorList">
             <thead>
               <tr>
