@@ -7,7 +7,7 @@ export class Practice {
         this.address_city = acit;
         this.address_zipcode = azip;
         this.address_state = aste;
-        (np) ? this.newPaitents = "Yes": this.newPaitents = "No";
+        (np) ? this.newPaitents = "Yes" : this.newPaitents = "No";
         (web === undefined) ? this.web = "N/A" : this.web = web;
     }
 
@@ -43,7 +43,7 @@ export class Practice {
                 this.address_zipcode === target.address_zipcode &&
                 this.address_state === target.address_state &&
                 this.newPaitents === target.newPaitents
-                ) {
+            ) {
                 return true;
             }
         }

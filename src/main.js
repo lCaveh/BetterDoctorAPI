@@ -8,32 +8,32 @@ import { Practice } from './practice';
 let queriedPractices = [];
 $(document).ready(function () {
     $('#queryForm').submit(function (event) {
-        event.preventDefault();  
+
+        event.preventDefault();
         let allDoctors = new Doctor();
         let inputQuery = $('#query').val();
         let queryType = $('input[name=queryType]:checked').val();
-        console.log(`QueryType ${queryType}`);
         $('.doctors').show();
+
         let promise;
-        if (queryType === "Name") {            
-            promise = allDoctors.getDoctorsByName(inputQuery);          
+        if (queryType === "Name") {
+            promise = allDoctors.getDoctorsByName(inputQuery);
             $('#doctorTitle').text(`Doctors by ${queryType}:`);
-        } else if (queryType === "Symptom") {        
+        } else if (queryType === "Symptom") {
             promise = allDoctors.getDoctorsBySymptom(inputQuery);
-            $('#doctorTitle').text(`Doctors by ${queryType}:`);            
+            $('#doctorTitle').text(`Doctors by ${queryType}:`);
         } else {
             promise = allDoctors.getDoctorsInSeattle();
-            $('#doctorTitle').text(`Doctors in Seattle`);            
+            $('#doctorTitle').text(`Doctors in Seattle`);
         }
-        
+
         promise.then(function (response) {
             let body = JSON.parse(response);
             let data = body.data;
-            console.log(data);
-            
+
             if (data.length === 0) {
                 $('#doctorList').text(`No doctors matching the symptom ${queryType} were found.`);
-            } else {                
+            } else {
                 $('#doctorInfo').empty();
                 for (let i = 0; i < data.length; i++) {
                     let fn = data[i].profile.first_name;
@@ -42,26 +42,25 @@ $(document).ready(function () {
                     let astr = data[i].practices[0].visit_address.street;
                     let acit = data[i].practices[0].visit_address.city;
                     let azip = data[i].practices[0].visit_address.zip;
-                    let aste = data[i].practices[0].visit_address.state;    
+                    let aste = data[i].practices[0].visit_address.state;
                     let np = data[i].practices[0].accepts_new_patients;
                     let web = data[i].practices[0].website;
                     let newPractice = new Practice(fn, ln, ph, astr, acit, azip, aste, np, web);
                     if (!(newPractice.isDuplicate(queriedPractices))) {
                         queriedPractices.push(newPractice);
-                    }       
+                    }
                     $('#doctorInfo').append(newPractice.displayData());
-                    
                 }
 
                 $('#recentDoctorInfo').empty();
                 $('#doctorRecent').show();
-                for (let i = 0; i < queriedPractices.length; i++) {  
-                    $('#recentDoctorInfo').append(queriedPractices[i].displayName()); 
+                for (let i = 0; i < queriedPractices.length; i++) {
+                    $('#recentDoctorInfo').append(queriedPractices[i].displayName());
                 }
+
             }
         }, function (error) {
             $('.showErrors').text(`There was an error processing your request: ${error.message}`);
-
         });
     });
 });
