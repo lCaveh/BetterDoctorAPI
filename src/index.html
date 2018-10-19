@@ -1,9 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>BetterDoctorAPI</title>
-  </head>
-  <body>
-    <p>BetterDoctorAPI</p>
-  </body>
+
+<head>
+  <title>BetterDoctorAPI</title>
+</head>
+
+<body>
+  <h1 class='jumbotron'>Look for a Doctor</h1>
+  <form id='symptomForm'>
+    <div class="form-group">
+      <label for="symptom">Search by Symptom</label>
+      <input class="form-control" name="symptom" id="symptom" type="text" required>
+    </div>
+  </form>
+  <button id='getAll' class='btn btn-info'>All Doctors in Seattle</button>
+
+  <h1>Doctors:<br></h1>
+  <div class='doctorList'>
+
+  </div>
+  <div class='showErrors'>
+
+  </div>
+  </div>
+</body>
+
 </html>
