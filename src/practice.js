@@ -7,7 +7,7 @@ export class Practice {
         this.address_city = acit;
         this.address_zipcode = azip;
         this.address_state = aste;
-        this.newPaitents = np;
+        (np) ? this.newPaitents = "Yes": this.newPaitents = "No";
         (web === undefined) ? this.web = "N/A" : this.web = web;
     }
 
