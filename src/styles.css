@@ -1,4 +1,4 @@
-.doctors {
+.doctors, #doctorRecent {
     display: none;
 }
 
@@ -6,9 +6,28 @@
     border: 1px solid black;
     border-radius: 3px;
     padding: 2%;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.doctors {
+
 }
 
 #doctorTitle {
     font-weight: bold;
     font-size: 40px;
+}
+
+table#doctorList {
+    overflow-wrap: break-word;
+    display: table;
+}
+
+body {
+    background-image: url("bg.jpg");
+    color: white;
+}
+
+h1 {
+    color: black;
 }

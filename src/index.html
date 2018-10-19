@@ -16,30 +16,49 @@
       <label for="radio">Search By:</label>
       <div class="radio">
         <label class='mr-2'><input class='mr-2' type="radio" value='Symptom' name="queryType">Symptom</label>
-        <label class='mr-2'><input class='mr-2'type="radio" value='Name' name="queryType">Name</label>
-        <label class='mr-2'><input class='mr-2'type="radio" value='All' name="queryType" checked>All in Seattle</label><br>
+        <label class='mr-2'><input class='mr-2' type="radio" value='Name' name="queryType">Name</label>
+        <label class='mr-2'><input class='mr-2' type="radio" value='All' name="queryType" checked>All in Seattle</label><br>
         <button class="btn btn-primary" type='submit'>Search For Doctors</button><br>
     </form>
 
     <div class='doctors'>
-      <h2 id="doctorTitle"></h2>
-      <table class="table table-striped id=" doctorList">
-        <thead>
-          <tr>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Address</th>
-            <th scope="col">Webpage</th>
-            <th scope="col">NewPaitents</th>
-          </tr>
-        </thead>
-        <tbody id="doctorInfo">
-        </tbody>
-      </table>
-    </div>
-    <div class='showErrors'>
-
+      <div class='row'>
+        <div class='col'>
+          <h2 id="doctorTitle"></h2>
+          <table class="table table-striped" id="doctorList">
+            <thead>
+              <tr>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Address</th>
+                <th scope="col">NewPaitents</th>
+                <th scope="col">Webpage</th>
+              </tr>
+            </thead>
+            <tbody id="doctorInfo">
+            </tbody>
+          </table>
+          <div class='showErrors'>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col'>
+          <h3>Recently Doctors Searched:</h3>
+          <table class="table table-striped" id="doctorRecent">
+            <thead>
+              <tr>
+                <th scope="col">Last</th>
+                <th scope="col">First</th>
+                <th scope="col">Phone</th>                
+              </tr>
+            </thead>
+            <tbody id="recentDoctorInfo">
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </body>
