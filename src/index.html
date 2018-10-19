@@ -6,29 +6,41 @@
 </head>
 
 <body>
-  <h1 class='jumbotron'>Look for a Doctor</h1>
-  <form id='queryForm'>
-    <div class="form-group">
-      <label for="query">Search by Doctor</label>
-      <input class="form-control" name="query" id="query" type="text">
+  <div class='container'>
+    <h1 class='jumbotron'>Look for a Doctor</h1>
+    <form id='queryForm'>
+      <div class="form-group">
+        <label for="query">Search by Doctor</label>
+        <input class="form-control" name="query" id="query" type="text">
+      </div>
+      <label for="radio">Search By:</label>
+      <div class="radio">
+        <label class='mr-2'><input class='mr-2' type="radio" value='Symptom' name="queryType">Symptom</label>
+        <label class='mr-2'><input class='mr-2'type="radio" value='Name' name="queryType">Name</label>
+        <label class='mr-2'><input class='mr-2'type="radio" value='All' name="queryType" checked>All in Seattle</label><br>
+        <button class="btn btn-primary" type='submit'>Search For Doctors</button><br>
+    </form>
+
+    <div class='doctors'>
+      <h2 id="doctorTitle"></h2>
+      <table class="table table-striped id=" doctorList">
+        <thead>
+          <tr>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Address</th>
+            <th scope="col">Webpage</th>
+            <th scope="col">NewPaitents</th>
+          </tr>
+        </thead>
+        <tbody id="doctorInfo">
+        </tbody>
+      </table>
     </div>
-    <label for="radio">Run Query By:</label>
-    <div class="radio">
-      <label><input type="radio" value='Symptom' name="queryType">Symptom</label>
-      <label><input type="radio" value='Name' name="queryType">Name</label>
-      <label><input type="radio" value='All' name="queryType" checked>All</label>
-    <button class="btn btn-primary" type='submit'>Search For Doctors</button><br>
-  </form>
+    <div class='showErrors'>
 
-
-  <h1>Doctors:<br></h1>
-  <div class='doctors'>
-    <h2 id="doctorTitle"></h2>
-    <p id="doctorList"></p>
-  </div>
-  <div class='showErrors'>
-
-  </div>
+    </div>
   </div>
 </body>
 

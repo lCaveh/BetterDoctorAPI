@@ -1,0 +1,14 @@
+.doctors {
+    display: none;
+}
+
+#queryForm {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 2%;
+}
+
+#doctorTitle {
+    font-weight: bold;
+    font-size: 40px;
+}

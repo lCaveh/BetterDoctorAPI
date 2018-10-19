@@ -36,7 +36,7 @@ export class Doctor {
         return new Promise(function (resolve, reject) {
             let request = new XMLHttpRequest();
 
-            let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=wa-seattle&skip=0&limit=5&user_key=${process.env.exports.apikey}`;
+            let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=wa-seattle&skip=0&limit=10&user_key=${process.env.exports.apikey}`;
             request.onload = function () {
                 if (this.status === 200) {
                     resolve(request.response);
