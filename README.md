@@ -24,6 +24,10 @@ A simple app that takes the user symptoms as an input and displays a list of doc
 
 * Clone this repository: https://github.com/nelsonsbrian/BetterDoctorAPI.git
 
+* Run NPM Install in cmd prompt
+* Obtain API from https://developer.betterdoctor.com/
+* Create .env file in root and add: exports.apikey = [Insert API Key Here] to file
+
 ## Known Bugs
 * No known bugs at this time.
 
